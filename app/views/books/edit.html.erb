@@ -1,0 +1,35 @@
+<h1>Editing Book</h1>
+
+<%= form_with model: @book, url: update_book_path(@book.id), method: :patch do |f| %>
+
+<p>title</P>
+
+<%= f.text_field :title %>
+
+<p>body</p>
+
+<%= f.text_area :body %>
+
+
+
+<%= f.submit 'Update Book' %>
+<%= link_to 'Show', book_path(@book) %>
+<%= link_to 'Back',:back %>
+
+
+<ul>
+  <div>
+    <%= flash[:success] %>
+  </div>
+
+    <% if @book.errors.any? %>
+
+    <%= @book.errors.count %>error
+    <% @book.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+      <% end %>
+</ul>
+<% end %>
+
+
+<% end %>
