@@ -33,13 +33,10 @@
 
   <h5>Body</h5>
     <%= f.text_area :body %>
-
-  <%= f.submit 'create book' %>
-
+    
+  <%= f.submit 'Create Book' %>
   <ul>
-    <div>
-      <%= flash[:success] %>
-    </div>
+   
 
       <% if @book.errors.any? %>
 
