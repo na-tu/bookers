@@ -8,7 +8,7 @@ describe '投稿のテスト' do
     end
     context '表示の確認' do
       it 'トップ画面(root_path)に一覧ページへのリンクが表示されているか', spec_category: "ルーティング・URL設定の理解" do
-        expect(books).to have_link "", href: books_path
+        expect(page).to have_link "", href: books_path
       end
       it 'root_pathが"/"であるか', spec_category: "ルーティング・URL設定の理解" do
         expect(current_path).to eq('/')
